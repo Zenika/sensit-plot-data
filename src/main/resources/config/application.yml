@@ -1,0 +1,10 @@
+sensit:
+  token: <sensit auth token here>
+  device:
+    id: <sensit device id here>
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    serialization-inclusion: NON_NULL
+    property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES
