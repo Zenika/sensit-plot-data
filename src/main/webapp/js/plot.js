@@ -21,7 +21,7 @@
       zoomEnabled: true,
       axisX: {
         title: 'Heure',
-        valueFormatString: "DD/MM HH:mm",
+        valueFormatString: "DDD DD/MM HH:mm",
         labelAngle: -20,
       },
       data: [
@@ -54,7 +54,7 @@
       zoomEnabled: true,
       axisX: {
         title: 'Heure',
-        valueFormatString: "DD/MM HH:mm",
+        valueFormatString: "DDD DD/MM HH:mm",
         labelAngle: -20
       },
       axisY: {
