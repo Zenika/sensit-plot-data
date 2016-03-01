@@ -67,13 +67,13 @@ $(function() {
     url: "/api/sensors/motion"
   })
   .done(function(response) {
-    plotMotion(response);
+    plotMotion(response.content);
   });
 
   $.get({
     url: "/api/sensors/temperature"
   })
   .done(function(response) {
-    plotTemperature(response);
+    plotTemperature(response.content);
   });
 });
