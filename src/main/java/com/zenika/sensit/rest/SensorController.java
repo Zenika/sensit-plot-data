@@ -61,17 +61,17 @@ public class SensorController {
     
     private Iterable<Link> getTemperatureSensorLinks(Links sensorLinks, Integer curPage) {
         
-        Integer lastPage = Optional.of(sensorLinks.getLast()).map(s -> Integer.parseInt(s.substring(s.length()-1))).orElse(1);
-        Integer firstPage = 1;
-        Integer nextPage = Math.min(lastPage, curPage+1);
-        Integer prevPage = Math.max(1, curPage-1);
+        Integer lastPage = sensorLinks.getLastPageNum();
+        Integer firstPage = sensorLinks.getFirstPageNum();
+        Integer nextPage = sensorLinks.getNextPageNum();
+        Integer prevPage = sensorLinks.getPrevPageNum();
         
         List<Link> result = new ArrayList<>();
         result.add(linkTo(methodOn(SensorController.class).getTemperatureSensor(firstPage)).withRel("first"));
         result.add(linkTo(methodOn(SensorController.class).getTemperatureSensor(lastPage)).withRel("last"));
-        if(nextPage != curPage)
+        if(nextPage != null)
             result.add(linkTo(methodOn(SensorController.class).getTemperatureSensor(nextPage)).withRel("next"));
-        if(prevPage != curPage)
+        if(prevPage != null)
             result.add(linkTo(methodOn(SensorController.class).getTemperatureSensor(prevPage)).withRel("prev"));
         
         return result;
